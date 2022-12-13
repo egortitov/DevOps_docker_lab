@@ -21,8 +21,11 @@ jobs:
       - name: Install Node.js dependencies
         run: npm ci
 
-      - name: Run linter
-        run: npm run lint   
+      - name: Run linters
+        uses: wearerequired/lint-action@v1
+        with:
+          github_token: ${{ secrets.github_token }}
+          eslint: true
     
   push_to_registry:
     name: Push Docker image to Docker Hub
