@@ -44,6 +44,6 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
       
       - name: Build Docker Image
-        run: docker build -t ${{ env.tag }} .
+        run: docker build -t titovegor/devops_docker_lab
       - name: Push Image to Docker Hub
-        run: docker push ${{ env.tag }}
+        run: docker push -t titovegor/devops_docker_lab
